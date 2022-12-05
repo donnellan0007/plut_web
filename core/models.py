@@ -13,11 +13,11 @@ class Profile(models.Model):
         (MALE, 'Male'),
         (FEMALE, 'Female'),
     ]
-    user = models.ForeignKey(User, on_delete=models.CASCADE, max_length=45)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, max_length=45, related_name='profile')
     description = models.TextField(max_length=150)
     gender = models.CharField(
         max_length=10,
-        choices=(GENDER),
+        choices=GENDER,
         default=MALE,
     )
     verified = models.BooleanField(default=False)

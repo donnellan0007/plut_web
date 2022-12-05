@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+{% extends 'base.html' %}
 <body>
+{% block content %}
     <h1>Test application</h1>
+    {% for listing in listings %}
+        <h2>{{ listing.title }}</h2>
+        <p>{{ listing.description }}</p>
+    {% endfor %}
+{% endblock %}
 </body>
-</html>

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <form enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        <div style="display: flex;flex-direction: column" class="form-group">
+            <label for="product-name">Product name</label>
+            {{ form.title }}
+            <label for="description">Description</label>
+            {{ form.description }}
+            <label for="price">Price</label>
+            {{ form.price }}
+            <label for="images">Image(s)</label>
+            {{ form.images }}
+        </div>
+        <input type="submit" value="Add Listing">
+    </form>
+{% endblock %}
